@@ -1,4 +1,7 @@
 #!/bin/bash
+DIR=$(dirname $(cd "$(dirname "$0")"; pwd))
+
+cd $DIR
 
 mkdir -p output
 gem install bundler -v 1.17.3 || true
