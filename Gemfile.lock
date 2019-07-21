@@ -1,0 +1,47 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    ast (2.4.0)
+    ffi (1.10.0)
+    ffi-aspell (1.1.0)
+      ffi
+    jaro_winkler (1.5.2)
+    kramdown (1.17.0)
+    mdspell (0.2.0)
+      ffi-aspell (~> 1.1)
+      kramdown (~> 1.8)
+      mixlib-cli (~> 1.5)
+      mixlib-config (~> 2.2)
+      rainbow (~> 2.0)
+    mixlib-cli (1.7.0)
+    mixlib-config (2.2.18)
+      tomlrb
+    parallel (1.17.0)
+    parser (2.6.2.1)
+      ast (~> 2.4.0)
+    psych (3.1.0)
+    rainbow (2.2.2)
+      rake
+    rake (12.3.2)
+    rubocop (0.67.2)
+      jaro_winkler (~> 1.5.1)
+      parallel (~> 1.10)
+      parser (>= 2.5, != 2.5.1.1)
+      psych (>= 3.1.0)
+      rainbow (>= 2.2.2, < 4.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 1.6)
+    ruby-progressbar (1.10.0)
+    tomlrb (1.2.8)
+    unicode-display_width (1.5.0)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  mdspell (>= 0.2.0)
+  rake
+  rubocop
+
+BUNDLED WITH
+   2.0.1

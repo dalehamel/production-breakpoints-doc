@@ -1,0 +1,9 @@
+services:
+  - docker
+language: ruby
+before_install:
+ - bundle install
+ - bundle exec rake docker:run
+script:
+ - CI=true bundle exec rake docker:test
+ - CI=true bundle exec rake docker:publish
