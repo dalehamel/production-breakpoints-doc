@@ -1,0 +1,3 @@
+[submodule "src/ruby-production-breakpoints"]
+	path = src/ruby-production-breakpoints
+	url = git@github.com:dalehamel/ruby-production-breakpoints.git
