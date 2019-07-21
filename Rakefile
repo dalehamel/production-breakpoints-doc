@@ -59,7 +59,7 @@ namespace :docker do
 
   desc 'Run the development image'
   task :run do
-    system("docker run -v $(pwd):/app --name usdt-report-doc -d quay.io/dalehamel/usdt-report-doc /bin/sh -c 'sleep infinity'")
+    system("docker run -v $(pwd):/app --name doc-builder -d quay.io/dalehamel/usdt-report-doc /bin/sh -c 'sleep infinity'")
   end
 
   desc 'push the development image to quay'
@@ -74,19 +74,19 @@ namespace :docker do
 
   desc 'Build target publications'
   task :publish do
-    system("docker exec usdt-report-doc ./scripts/build.sh #{"CI" if ENV['CI']}")
+    system("docker exec doc-builder /app/scripts/build.sh #{"CI" if ENV['CI']}")
   end
 
   desc 'Run tests inside docker'
   task :test do
-    command = "docker exec #{"-e CI=true" if ENV['CI']} usdt-report-doc  ./scripts/spellcheck.sh #{"CI" if ENV['CI']}"
+    command = "docker exec #{"-e CI=true" if ENV['CI']} doc-builder  /app/scripts/spellcheck.sh #{"CI" if ENV['CI']}"
     puts command
     exit system(command)
   end
 
   desc 'Cleanup development image'
   task :clean do
-    system("docker container ls --quiet --filter name=usdt-report-doc* | xargs -I@ docker container rm --force @")
+    system("docker container ls --quiet --filter name=doc-builder* | xargs -I@ docker container rm --force @")
   end
 
   desc 'Debug shell for docker container'
@@ -95,7 +95,7 @@ namespace :docker do
   end
 
   def latest_running_container_id
-    container_id = `docker container ls --latest --quiet --filter status=running --filter name=usdt-report-doc*`.strip
+    container_id = `docker container ls --latest --quiet --filter status=running --filter name=doc-builder*`.strip
     if container_id.empty?
       raise "No containers running, please run rake docker:run and then retry this task"
     else
