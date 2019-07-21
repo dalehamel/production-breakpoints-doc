@@ -5,7 +5,7 @@ before_script:
 - gem install bundler:2.0.1
 script:
 - docker run -v $(pwd):/app --name doc-builder -d quay.io/dalehamel/usdt-report-doc /bin/sh -c 'sleep infinity'
-- docker exec doc-builder /app/scripts/build.sh
+- docker exec doc-builder /app/scripts/build.sh CI
 
 env:
   matrix:
