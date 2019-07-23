@@ -1,0 +1,45 @@
+#!/bin/bash
+
+FORMATS=(html pdf epub)
+
+set -x
+
+# See pandoc documentation
+# https://pandoc.org/MANUAL.html
+# for more details if you want to tweak
+pandoc_build()
+{
+
+  format=$1
+
+  # FIXME can this be DRYed up a bit?
+  if [ "${format}" == "html" ];then
+    pandoc docs/*.md --toc \
+      --top-level-division=chapter \
+      --metadata date="$( date +'%D %X %Z')" \
+      --metadata link-citations=true \
+      --bibliography=bibliography.yaml \
+      --csl ieee-with-url.csl \
+      --template=./templates/GitHub.html5 \
+      --filter pandoc-citeproc \
+      --filter pandoc-include-code -s --highlight-style espresso \
+      -o output/doc.${format}
+
+  else
+    pandoc docs/*.md --toc \
+      --top-level-division=chapter \
+      --metadata date="$( date +'%D %X %Z')" \
+      --metadata link-citations=true \
+      --bibliography=bibliography.yaml \
+      --csl ieee-with-url.csl \
+      --filter pandoc-citeproc \
+      --filter pandoc-include-code -s --highlight-style espresso \
+      -o output/doc.${format}
+  fi
+}
+
+mkdir -p output
+
+for format in "${FORMATS[@]}";do
+  pandoc_build ${format}
+done
