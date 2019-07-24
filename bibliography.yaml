@@ -17,3 +17,12 @@ references:
 - id: nobu-eval-with-patch
   title: Nobu's original patch for iseq.eval_with
   URL: https://github.com/ruby/ruby/pull/2298/commits/5d0c8c83d8fdea16c403abbc80c160ddddb92ef8
+- id: usdt-report-doc
+  title: USDT Report Doc
+  URL: https://bpf.sh/usdt-report-doc/index.html
+- id: ruby-static-tracing-gem
+  title: Ruby Static Tracing Gem
+  URL: https://rubygems.org/gems/ruby-static-tracing/
+- id: ruby-static-tracing
+  title: Ruby Static Tracing Github
+  URL: http://github.com/dalehamel/ruby-static-tracing
