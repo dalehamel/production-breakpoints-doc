@@ -11,3 +11,9 @@ references:
 - id: ruby-2-6-tracing-docs
   title: Ruby 2.6 Method Tracing Docs
   URL: https://ruby-doc.org/core-2.6/TracePoint.html#method-i-enable
+- id: ruby-iseq-eval-patch
+  title: Make iseq eval consistent with Kernel eval
+  URL: https://github.com/ruby/ruby/pull/2298
+- id: nobu-eval-with-patch
+  title: Nobu's original patch for iseq.eval_with
+  URL: https://github.com/ruby/ruby/compare/trunk...nobu:feature/12093-iseq-eval_with
