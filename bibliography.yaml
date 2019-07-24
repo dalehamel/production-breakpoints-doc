@@ -5,3 +5,9 @@ references:
   - given: 
     family: 
   URL: 
+- id: ruby-tracing-feature-15289
+  title: Ruby 2.6 adds method tracing
+  URL: https://bugs.ruby-lang.org/issues/15289
+- id: ruby-2-6-tracing-docs
+  title: Ruby 2.6 Method Tracing Docs
+  URL: https://ruby-doc.org/core-2.6/TracePoint.html#method-i-enable
