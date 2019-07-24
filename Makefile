@@ -11,4 +11,7 @@ PWD ?= `pwd`
 doc/build:
 	${DOCKER} run -v ${PWD}:/app ${PANDOC_BUILDER_IMAGE} /app/scripts/pandoc-build
 
-all: doc/build
+index.html:
+	ln -sf output/doc.html index.html
+
+all: doc/build index.html
