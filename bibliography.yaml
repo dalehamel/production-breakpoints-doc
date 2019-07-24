@@ -16,4 +16,4 @@ references:
   URL: https://github.com/ruby/ruby/pull/2298
 - id: nobu-eval-with-patch
   title: Nobu's original patch for iseq.eval_with
-  URL: https://github.com/ruby/ruby/compare/trunk...nobu:feature/12093-iseq-eval_with
+  URL: https://github.com/ruby/ruby/pull/2298/commits/5d0c8c83d8fdea16c403abbc80c160ddddb92ef8
