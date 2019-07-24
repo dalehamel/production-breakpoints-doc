@@ -25,8 +25,18 @@ pandoc_build()
       --filter pandoc-include-code -s --highlight-style espresso \
       -o output/doc.${format}
 
-  else
+  elif [ "${format}" == "pdf" ];then
     pandoc docs/*.md --toc \
+      --top-level-division=chapter \
+      --metadata date="$( date +'%D %X %Z')" \
+      --metadata link-citations=true \
+      --bibliography=bibliography.yaml \
+      --csl ieee-with-url.csl \
+      --filter pandoc-citeproc \
+      --filter pandoc-include-code -s --highlight-style espresso \
+      -o output/doc.${format}
+  else
+     pandoc docs/*.md --toc \
       --top-level-division=chapter \
       --metadata date="$( date +'%D %X %Z')" \
       --metadata link-citations=true \
