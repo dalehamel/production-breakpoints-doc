@@ -1,12 +1,47 @@
 references:
-- id: 
-  title: 
+- id: hsbt
+  title: SHIBATA Hiroshi (aka hsbt) Home Page
+  URL: https://www.hsbt.org/
   author:
-  - given: 
-    family: 
-  URL: 
+  - given: Shibata
+    family: Hiroshi
+- id: nobu
+  title: Nobuyoshi Nakada Github
+  URL: https://github.com/nobu
+  author:
+  - given: Nobuyoshi
+    family: Nakada
+- id: tenderlove
+  title: TenderLove Making
+  subtitle: The act of making love, tenderly
+  URL: http://tenderlovemaking.com
+  author:
+  - given: Aaron
+    family: Patterson
+- id: ko1
+  title: Home page of Koichi Sasada
+  URL: http://www.atdot.net/~ko1/
+  author:
+  - given: Koichi
+    family: Sasada
+- id: xrxr
+  title: Alan wu's Github
+  URL: https://github.com/XrXr
+  author:
+  - given: Alan
+    family: Wu
+- id: ruby-prelude-targetted-tracing
+  title: Ruby 2.6 targetted tracing prelude docs
+  URL: https://github.com/ruby/ruby/blame/master/prelude.rb#L140-L173
+  author:
+  - given: Shibata
+    family: Hiroshi
+  - given: Nobuyoshi
+    family: Nakada
+  - given: Koichi
+    family: Sasada
 - id: ruby-tracing-feature-15289
-  title: Ruby 2.6 adds method tracing
+  title: Ruby 2.6 adds targetted tracing
   URL: https://bugs.ruby-lang.org/issues/15289
 - id: ruby-2-6-tracing-docs
   title: Ruby 2.6 Method Tracing Docs
@@ -17,12 +52,24 @@ references:
 - id: nobu-eval-with-patch
   title: Nobu's original patch for iseq.eval_with
   URL: https://github.com/ruby/ruby/pull/2298/commits/5d0c8c83d8fdea16c403abbc80c160ddddb92ef8
-- id: usdt-report-doc
-  title: USDT Report Doc
-  URL: https://bpf.sh/usdt-report-doc/index.html
 - id: ruby-static-tracing-gem
   title: Ruby Static Tracing Gem
   URL: https://rubygems.org/gems/ruby-static-tracing/
 - id: ruby-static-tracing
   title: Ruby Static Tracing Github
   URL: http://github.com/dalehamel/ruby-static-tracing
+- id: xrxr-gist
+  title: Demo of targetted tracing by Alan Wu
+  URL: https://gist.github.com/XrXr/f6cc2f1a4b6d3341e3d3fc749bcd5255
+- id: inine-cacheing-tenderlove
+  title: Inline Caching in MRI
+  URL: https://tenderlovemaking.com/2015/12/23/inline-caching-in-mri.html
+  author:
+  - given: Aaron
+    family: Patterson
+- id: usdt-report-doc
+  title: USDT Report Doc
+  URL: https://bpf.sh/usdt-report-doc/index.html
+  author:
+  - given: Dale
+    family: Hamel

@@ -15,6 +15,7 @@ pandoc_build()
   # FIXME can this be DRYed up a bit?
   if [ "${format}" == "html" ];then
     pandoc docs/*.md --toc \
+      --self-contained \
       --top-level-division=chapter \
       --metadata date="$( date +'%D %X %Z')" \
       --metadata link-citations=true \
