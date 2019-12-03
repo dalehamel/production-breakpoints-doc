@@ -1,0 +1,11 @@
+{
+  "breakpoints": [
+    {
+      "type": "ustack",
+      "source_file": "ustack.rb",
+      "start_line": 9,
+      "end_line": 9,
+      "trace_id": "ustack_test"
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+usdt::hello_rb:locals_hello_test
+{
+  printf("%s\n", str(arg0));
+  exit();
+}

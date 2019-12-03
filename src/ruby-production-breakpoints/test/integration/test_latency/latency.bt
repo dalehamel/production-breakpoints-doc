@@ -1,0 +1,5 @@
+usdt::latency_rb:latency_latency_test
+{
+  printf("%lld\n", arg0);
+  exit();
+}

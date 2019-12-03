@@ -1,0 +1,15 @@
+language: minimal
+dist: bionic
+services:
+- docker
+script:
+- make
+- rm .gitignore
+env:
+  matrix:
+  - secure: PpUbRh5Wj2aHsu9n3oeyuT+891uOvTzt4IJuk4cm4cYaOoVyFWhkB14ZsL7pvbc7cesrEX+el1ZUXgi67DuyJYue4X1/mRs2xAbrOTQb75pdhjmskJEfX8x9ijD9gwhXSGyMqlI+8taS+F4MJqsX1YamBApMGBVC5fLPjVUlvY3f+119S78u3IvCTppBJIDHI2tb2zUvM9IgVGqo+rVse362kqOKc3+A5hHCO772Mrj5TM3PFMn2j2K2/d3X4BqULxb+GkNckb79CTb9GP9WqBtuu6KnqK+Ol2xDwQHJEPFoJOw4YrvQ7zFA5HAOszh0lRbpF8Ac6hX/L+TKQaQ8H9Vt3kjOUhDe59Z5yslZNkwga5KC1w9UL0ALSE9QZmzqtqufibgMDfOco2oXlVbarZhdYPJWi6fspKqGVoVMA9Loq/VfEJ3WUs+oIj/Hp8Y0cApTIHj7EdYTfecKb0dyOw/O4+7PLEPKozMoKACLwKIoiThQ/0xqPbM5D4sBtGuWDJUc7vOg8c+f63sMGx01wemV7VC92OnFFMJBoAjjmKRVkbXfgtYRml1qBqJ2L41juxdK9bnI5OCvFZdoji44Q71BafuREy7+7hsg+ff5RxSLunJExRwAuQz8dApxV1J+dQ34buTIve0OA+4+vuyjZ9cwMwjX7ejsPZe6MrH19zk=
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: "$GITHUB_TOKEN"
+  target_branch: gh-pages

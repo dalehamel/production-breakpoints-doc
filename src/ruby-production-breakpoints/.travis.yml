@@ -1,0 +1,4 @@
+dist: bionic
+language: ruby
+before_install:
+- sudo apt-get install -y libelf-dev

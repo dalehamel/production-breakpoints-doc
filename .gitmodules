@@ -1,0 +1,7 @@
+[submodule "src/ruby-production-breakpoints"]
+	path = src/ruby-production-breakpoints
+	url = https://github.com/dalehamel/ruby-production-breakpoints.git
+[submodule "src/ruby"]
+	path = src/ruby
+	url = https://github.com/dalehamel/ruby.git
+	shallow = true

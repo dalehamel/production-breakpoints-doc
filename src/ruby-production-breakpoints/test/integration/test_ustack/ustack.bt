@@ -1,0 +1,6 @@
+usdt::ustack_rb:ustack_ustack_test
+{
+  printf("%s%s%s%s%s%s\n", str(arg0), str(arg1),
+                            str(arg2), str(arg3), str(arg4), str(arg5));
+  exit();
+}

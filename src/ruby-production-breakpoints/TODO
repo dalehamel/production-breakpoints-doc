@@ -1,0 +1,9 @@
+- 
+- Integration tests
+- Refactor test suite
+- More tests
+- More test files to inject
+- Test that tracepoints were enabled
+ - Try to hook in to https://ruby-doc.org/core-2.6.3/RubyVM/InstructionSequence.html#method-i-trace_points in tests
+- Handle single-line definitions better by parsing columns more accurately
+- Safety for inspect, ensure it doesn't do method calls

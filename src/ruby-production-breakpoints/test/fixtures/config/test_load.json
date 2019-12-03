@@ -1,0 +1,11 @@
+{
+  "breakpoints": [
+    {
+      "type": "inspect",
+      "source_file": "test/fixtures/ruby_sources/config_target.rb",
+      "start_line": 7,
+      "end_line": 9,
+      "trace_id": "config_file_test"
+    }
+  ]
+}

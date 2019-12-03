@@ -1,0 +1,11 @@
+{
+  "breakpoints": [
+    {
+      "type": "latency",
+      "source_file": "latency.rb",
+      "start_line": 8,
+      "end_line": 10,
+      "trace_id": "latency_test"
+    }
+  ]
+}

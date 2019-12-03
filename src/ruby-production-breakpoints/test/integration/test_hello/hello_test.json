@@ -1,0 +1,11 @@
+{
+  "breakpoints": [
+    {
+      "type": "locals",
+      "source_file": "hello.rb",
+      "start_line": 10,
+      "end_line": 10,
+      "trace_id": "hello_test"
+    }
+  ]
+}
