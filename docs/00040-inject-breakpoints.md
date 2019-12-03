@@ -81,8 +81,8 @@ ProductionBreakpoints.config_file
 Can be set to specify the path to a JSON config, indicating the breakpoints
 that are to be installed:
 
-```{.json include=src/ruby-production-breakpoints/test/config/test_load.json}
-```
+FIXME
+{.json include=src/ruby-production-breakpoints/test/config/test_load.json}
 
 
 These values indicate:

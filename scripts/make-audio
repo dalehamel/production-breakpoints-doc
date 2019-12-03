@@ -1,0 +1,50 @@
+#!/bin/bash
+#set -x
+set -e
+
+# gtts-cli installed from python
+
+mkdir -p output/mp3
+
+total_seconds=0
+
+generate_speech()
+{
+  echo "Generating accessibility audio via google-translate"
+  for file in output/plain/*.plain; do
+
+    fname="$(basename $file)"
+    outfile="output/mp3/${fname}.mp3"
+    echo -e "Generating speech for ${fname}"
+    echo -e "\tPatching plain-text for ${fname} and optimizing text for playback"
+    echo -e "\tSubmitting ${fname} to google translate for speech generation"
+
+    # These translate some words for better phonetics
+
+    cp $file /tmp/$fname
+
+    if [ -f audio/phonetics.txt ];then
+      while read k v; do
+          sed -i "s/$(echo $k | tr -d \" | sed 's/\*/\\\*/g')/$(echo $v | tr -d \")/gI" /tmp/$fname
+      done < audio/phonetics.txt
+    fi
+    # I can't figure out a way to join multiple adjacent lines of a paragraph
+    # with sed or perl, but this vim stream seems to do the trick, and vim is in
+    # the docker container, and it's a regex so it's kinda cryptic anyways
+    #  vim -E '+%s/^[\d\+\]\_.*' +%p -cq! /dev/stdin # This is to strip footnotes
+    #  vim -E '+%s/\(\S\)\n\(\S\)/\1 \2/' +%p -cq! /dev/stdin # this is to join into paragraphs
+    time cat /tmp/$fname | \
+      sed 's/\[@.*\]//g' | \
+      vim -E '+%s/\(\S\)\n\(\S\)/\1 \2/' +%p -cq! /dev/stdin | \
+      vim -E '+%s/^[\d\+\].*' +%p -cq! /dev/stdin | \
+      sed 's/\[.*\]//g' | \
+      gtts-cli -f - -o $outfile
+
+    seconds=$(mp3info -p "%S" $outfile)
+    ((total_seconds+=${seconds}))
+    echo -e "\t\tGenerated ${seconds}s of audio, at ${outfile}"
+  done
+}
+
+time generate_speech
+echo "Generated ${total_seconds}s of audio total"
