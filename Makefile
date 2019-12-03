@@ -38,4 +38,4 @@ audio: plain
 .PHONY: outputs
 outputs: doc/build index.html
 
-all: outputs
+all: audio outputs
